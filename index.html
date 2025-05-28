@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>World of Morrison</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="./image.css"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #f5f5f5;
+      color: #333;
+      overflow: hidden;
+    }
+
+    /* Loader */
+    #loader {
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      background: white;
+      color: #1e96e0;;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1rem;
+      z-index: 9999;
+      animation: fadeOut 2s ease-in-out 2s forwards;
+    }
+    .loader-text h3{
+        font-size: 1.5rem;
+        animation: pop 2s ease-in-out infinite alternate;
+        font-family: 'Times New Roman', Times, serif;
+    }
+     .loader-text{
+         margin-top: 10px;
+         font-size: 2rem;
+         color:hsl(203, 80%, 16%);
+     }
+     @keyframes pop{
+            from{transform:scale(1);}
+            to{ transform: scale(1,1);}
+     }
+    @keyframes fadeOut {
+      to {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+
+    header {
+      background-color: #1e96e0;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background: hsl(203, 80%, 16%);
+    }
+
+    nav a {
+      padding: 15px;
+      color: white;
+      text-decoration: none;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    nav a:hover {
+      background: #1e96e0;;
+    } 
+    
+
+    section {
+      padding: 60px 20px;
+      text-align: center;
+      display: none;
+      animation: fadeIn 0.8s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    #home {
+      display: block;
+    }
+
+    .home-content h2 {
+      font-size: 2.5rem;
+      color: #006600;
+      margin-bottom: 20px;
+    }
+
+    .home-content p {
+      font-size: 1.2rem;
+      color: #333333;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .logo{
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .service-box {
+      background: #1e96e0;
+      border-left: 5px solid hsl(203, 80%, 16%);
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 5px 15px hsl(203, 80%, 16%);
+      text-align: left;
+    }
+
+    footer {
+      background: hsl(203, 80%, 16%);
+      color: white;
+      text-align:center;
+      padding: 15px;
+    }
+
+    form {
+      max-width: 500px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    form input, form textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    form button {
+      background: #1e96e0;;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    form button:hover {
+      background: hsl(204, 19%, 56%);
+    }
+    .service-box{
+        display: grid;
+         margin-top: 10px;
+         font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+  <div id="loader">
+  <div class="loader-text">
+    <h3>World of Morrison</h3>
+    <p >....⭐⭐⭐.... </p>
+  </div>
+</div>
+
+  <header>
+    <div class="header-content">
+        <img src="./res image.jpg" alt="Morrison" class="logo">
+    </div>
+    <h1>ELLEN'S RESTAURANT</h1>
+    <p>Experience the best in local and continental cuisine</p>
+  </header>
+
+  <nav>
+    <a onclick="showSection('home')">Home</a>
+    <a onclick="showSection('about')">About</a>
+    <a onclick="showSection('services')">Services</a>
+    <a onclick="showSection('contact')">Contact</a>
+  </nav>
+
+  <section id="home" class="home-content">
+    <h2 style="color:   #1e96e0;">WELCOME TO OUR RESTAURANT</h2>
+    <p>Enjoy a rich blend of local and international dishes in a cozy, elegant environment — where food tells a story and every bite matters.</p>
+  </section>
+
+  <section id="about">
+    <h2 style="color:#1e96e0;">ABOUT US</h2> <hr/>
+    <p>At our Restaurant, we bring you flavors from across the world, blended with Ghanaian hospitality. Our mission is to serve quality meals in a welcoming atmosphere, giving our guests a taste of both tradition and innovation.</p>
+    <p>We specialize in both local and continental dishes, carefully prepared with fresh ingredients and a deep love for food. Whether you're craving the rich taste of Ghanaian classics or the delicious aroma of international cuisine, we've got you covered.</p>
+    <p>Our dining space offers a warm and relaxing atmosphere, perfect for casual meals, business lunches, and celebrations. With exceptional service and a cozy environment, we ensure every guest feels right at home.</p>
+    <p>Join us today and enjoy an unforgettable food journey.</p>
+         <br/>
+         <p style="color: #1e96e0;">Taste the world — right here in kumasi.</p>
+  </section>
+
+  <section id="services">
+    <h2 style="color: #1e96e0;;">OUR SERVICES</h2>
+   <div class="services">
+  <div class="service-box" onclick="toggleService(this)">
+    <h3 style="color: whitesmoke;">Continental Foods</h3>
+    <p class="service-detail">Jollof, Fried Rice, Noodles, Grilled Tilapia and more.</p>
+  </div>
+  <div class="service-box" onclick="toggleService(this)">
+    <h3 style="color: whitesmoke";>Local Foods</h3>
+    <p class="service-detail">Fufu, Motuo, Banku, Plain Rice and more.</p>
+  </div>
+  <div class="service-box" onclick="toggleService(this)">
+    <h3 style="color: whitesmoke";>Pub Drinks</h3>
+    <p class="service-detail">Soft drinks, Cocktails and more.</p>
+  </div>
+  <div class="service-box" onclick="toggleService(this)">
+    <h3 style="color: whitesmoke";> Alcoholic Drinks</h3>
+    <p class="service-detail">Beers, Wines, Spirits- responsibly served.</p>
+  </div>
+</div>
+  </section>
+
+  <section id="contact">
+    <h2 style="color: #1e96e0;;">CONTACT US</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 World of Morrison. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Show one section at a time
+    function showSection(sectionId) {
+      const sections = document.querySelectorAll('section');
+      sections.forEach(sec => {
+        sec.style.display = 'none';
+      });
+      document.getElementById(sectionId).style.display = 'block';
+    }
+
+    // Remove loader and allow scroll
+    setTimeout(() => {
+      document.body.style.overflow = 'auto';
+    }, 3000);
+
+    //services
+  function toggleService(box) {
+    const detail = box.querySelector('.service-detail');
+    detail.style.display = detail.style.display === 'block' ? 'none' : 'block';
+  }
+  </script>
+</body>
+</html>
