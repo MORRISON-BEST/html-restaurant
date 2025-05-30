@@ -282,8 +282,6 @@
 
       <input type="text" id="location" placeholder="Enter your delivery location" required/>
       <input type="text" id="Number" placeholder=" Enter your phone number" required/>
-      <input type="text" id="Address" placeholder="Enter your house Address number" required/>
-
       <button type="submit">Place Order</button>
     </form>
   </section>
@@ -340,14 +338,14 @@
         const category = document.getElementById('category').value;
         const menu = document.getElementById('menu').value;
         const location = document.getElementById('location').value;
-
+        const Number = document.getElementById('Number').value;
         if (!category || !menu || !location) {
           alert("Please complete all fields.");
           return;
         }
 
-        alert(`Your order for "${menu}" under ${category.toUpperCase()} has been placed successfully to Ellen's restaurant. We will deliver to ${location}, ${Address} soon. Thank you!`);
-        window.open(`https://wa.me/233599395908?text=New Order: ${menu} (${category}) to be delivered at ${location} , ${Address}`);
+        alert(`Your order for "${menu}" under ${category.toUpperCase()} has been placed successfully to Ellen's restaurant. We will deliver to ${location} and call you on ${Number} soon. Thank you!`);
+        window.open(`https://wa.me/233599395908?text=New Order: ${menu} (${category}) to be delivered at ${location} and my phone number is ${Number}` );
 
         orderForm.reset();
       });
@@ -356,7 +354,7 @@
     document.addEventListener("DOMContentLoaded", function () {
   // ⬅ Your existing order form code
 
-  // ⬇ Paste it right here
+  // 
   document.getElementById('contactForm').addEventListener('submit', function(e) {
     e.preventDefault();
 
