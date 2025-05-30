@@ -82,7 +82,7 @@
     }
 
     nav a {
-      padding: 15px;
+      padding: 10px;
       color: white;
       text-decoration: none;
       transition: 0.3s;
@@ -94,7 +94,7 @@
     }
 
     section {
-      padding: 60px 20px;
+      padding: 50px 20px;
       text-align: center;
       display: none;
       animation: fadeIn 0.8s ease-in-out;
@@ -280,7 +280,10 @@
         <option value=""> Choose Item </option>
       </select>
 
-      <input type="text" id="location" placeholder="Enter your delivery location and your phone number" required/>
+      <input type="text" id="location" placeholder="Enter your delivery location" required/>
+      <input type="text" id="Number" placeholder=" Enter your phone number" required/>
+      <input type="text" id="Address" placeholder="Enter your house Address number" required/>
+
       <button type="submit">Place Order</button>
     </form>
   </section>
@@ -343,8 +346,8 @@
           return;
         }
 
-        alert(`Your order for "${menu}" under ${category.toUpperCase()} has been placed successfully to Ellen's restaurant. We will deliver to ${location} soon. Thank you!`);
-        window.open(`https://wa.me/233599395908?text=New Order: ${menu} (${category}) to be delivered at ${location}`);
+        alert(`Your order for "${menu}" under ${category.toUpperCase()} has been placed successfully to Ellen's restaurant. We will deliver to ${location}, ${Address} soon. Thank you!`);
+        window.open(`https://wa.me/233599395908?text=New Order: ${menu} (${category}) to be delivered at ${location} , ${Address}`);
 
         orderForm.reset();
       });
