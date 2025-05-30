@@ -6,8 +6,9 @@
   <title>World of Morrison</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Pacifico&family=Roboto&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="./image.css"/>
   <style>
     * {
       margin: 0;
@@ -22,13 +23,12 @@
       overflow: hidden;
     }
 
-    /* Loader */
     #loader {
       position: fixed;
       width: 100%;
       height: 100vh;
       background: white;
-      color: #1e96e0;;
+      color: #1e96e0;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -36,20 +36,24 @@
       z-index: 9999;
       animation: fadeOut 2s ease-in-out 2s forwards;
     }
-    .loader-text h3{
-        font-size: 1.5rem;
-        animation: pop 2s ease-in-out infinite alternate;
-        font-family: 'Times New Roman', Times, serif;
+
+    .loader-text h3 {
+      font-size: 1.5rem;
+      animation: pop 2s ease-in-out infinite alternate;
+      font-family: 'Times New Roman', Times, serif;
     }
-     .loader-text{
-         margin-top: 10px;
-         font-size: 2rem;
-         color:hsl(203, 80%, 16%);
-     }
-     @keyframes pop{
-            from{transform:scale(1);}
-            to{ transform: scale(1,1);}
-     }
+
+    .loader-text {
+      margin-top: 10px;
+      font-size: 2rem;
+      color: hsl(203, 80%, 16%);
+    }
+
+    @keyframes pop {
+      from { transform: scale(1); }
+      to { transform: scale(1.05); }
+    }
+
     @keyframes fadeOut {
       to {
         opacity: 0;
@@ -62,6 +66,13 @@
       color: white;
       padding: 20px;
       text-align: center;
+    }
+
+    .logo {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
     }
 
     nav {
@@ -79,9 +90,8 @@
     }
 
     nav a:hover {
-      background: #1e96e0;;
-    } 
-    
+      background: #0b1115;
+    }
 
     section {
       padding: 60px 20px;
@@ -105,25 +115,6 @@
       display: block;
     }
 
-    .home-content h2 {
-      font-size: 2.5rem;
-      color: #006600;
-      margin-bottom: 20px;
-    }
-
-    .home-content p {
-      font-size: 1.2rem;
-      color: #333333;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-    .logo{
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        object-fit: cover;
-    }
-
     .services {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -138,12 +129,13 @@
       padding: 20px;
       box-shadow: 0 5px 15px hsl(203, 80%, 16%);
       text-align: left;
+      font-size: 0.95rem;
     }
 
     footer {
       background: hsl(203, 80%, 16%);
       color: white;
-      text-align:center;
+      text-align: center;
       padding: 15px;
     }
 
@@ -155,14 +147,14 @@
       gap: 10px;
     }
 
-    form input, form textarea {
+    form input, form select, form textarea {
       padding: 10px;
       border: 1px solid #ccc;
       border-radius: 5px;
     }
 
     form button {
-      background: #1e96e0;;
+      background: #1e96e0;
       color: white;
       padding: 10px;
       border: none;
@@ -173,26 +165,42 @@
     form button:hover {
       background: hsl(204, 19%, 56%);
     }
-    .service-box{
-        display: grid;
-         margin-top: 10px;
-         font-size: 0.95rem;
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap');
+
+.intro-paragraph {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  color: #333;
+  max-width: 800px;
+  margin: 2rem auto;
+  text-align: center;
+  background:  #1e96e0;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  border: solid hsl(203, 80%, 16%)  ;
+}
+
+    .special-paragraph {
+      font-family: 'Great Vibes', cursive;
+      font-size: 23px;
+      color: hsl(203, 80%, 16%) /* Optional styling */
     }
+  
   </style>
 </head>
 <body>
-  <div id="loader">
-  <div class="loader-text">
-    <h3>World of Morrison</h3>
-    <p >....⭐⭐⭐.... </p>
+  <div id="loader"> 
+    <div class="loader-text">
+      <h3>World of Morrison</h3>
+      <p>..⭐..⭐.. ⭐.. </p>
+    </div>
   </div>
-</div>
 
   <header>
-    <div class="header-content">
-        <img src="./res image.jpg" alt="Morrison" class="logo">
-    </div>
-    <h1>ELLEN'S RESTAURANT</h1>
+    <img src="./res image.jpg" alt="Morrison" class="logo">
+    <h1>ELLENS'S RESTAURANT</h1>
     <p>Experience the best in local and continental cuisine</p>
   </header>
 
@@ -201,47 +209,56 @@
     <a onclick="showSection('about')">About</a>
     <a onclick="showSection('services')">Services</a>
     <a onclick="showSection('contact')">Contact</a>
+    <a onclick="showSection('order')">Order</a>
   </nav>
 
-  <section id="home" class="home-content">
-    <h2 style="color:   #1e96e0;">WELCOME TO OUR RESTAURANT</h2>
+  <section id="home">
+    <h2 style="color: #1e96e0;">WELCOME TO OUR RESTAURANT</h2>
     <p>Enjoy a rich blend of local and international dishes in a cozy, elegant environment — where food tells a story and every bite matters.</p>
-  </section>
-
-  <section id="about">
-    <h2 style="color:#1e96e0;">ABOUT US</h2> <hr/>
-    <p>At our Restaurant, we bring you flavors from across the world, blended with Ghanaian hospitality. Our mission is to serve quality meals in a welcoming atmosphere, giving our guests a taste of both tradition and innovation.</p>
-    <p>We specialize in both local and continental dishes, carefully prepared with fresh ingredients and a deep love for food. Whether you're craving the rich taste of Ghanaian classics or the delicious aroma of international cuisine, we've got you covered.</p>
-    <p>Our dining space offers a warm and relaxing atmosphere, perfect for casual meals, business lunches, and celebrations. With exceptional service and a cozy environment, we ensure every guest feels right at home.</p>
-    <p>Join us today and enjoy an unforgettable food journey.</p>
-         <br/>
-         <p style="color: #1e96e0;">Taste the world — right here in kumasi.</p>
-  </section>
-
-  <section id="services">
-    <h2 style="color: #1e96e0;;">OUR SERVICES</h2>
-   <div class="services">
-  <div class="service-box" onclick="toggleService(this)">
-    <h3 style="color: whitesmoke;">Continental Foods</h3>
-    <p class="service-detail">Jollof, Fried Rice, Noodles, Grilled Tilapia and more.</p>
-  </div>
-  <div class="service-box" onclick="toggleService(this)">
-    <h3 style="color: whitesmoke";>Local Foods</h3>
-    <p class="service-detail">Fufu, Motuo, Banku, Plain Rice and more.</p>
-  </div>
-  <div class="service-box" onclick="toggleService(this)">
-    <h3 style="color: whitesmoke";>Pub Drinks</h3>
-    <p class="service-detail">Soft drinks, Cocktails and more.</p>
-  </div>
-  <div class="service-box" onclick="toggleService(this)">
-    <h3 style="color: whitesmoke";> Alcoholic Drinks</h3>
-    <p class="service-detail">Beers, Wines, Spirits- responsibly served.</p>
-  </div>
+    <div class="intro-paragraph">
+  <p>
+   <span class="special-paragraph" >Have a great taste experience like no other-where every bite tells a story, and every dish is crafted with passion. At our place, flavor meets elegance, and your satisfaction is our masterpiece!!!</span>
+  </p>
 </div>
   </section>
 
+  <section id="about">
+    <h2 style="color:#1e96e0;">ABOUT US</h2><hr/>
+     <div class="intro-paragraph">
+      <p>We bring you flavors from across the world, blended with Ghanaian hospitality.</p>
+    <p>Our mission is to serve quality meals in a welcoming atmosphere, giving our guests a taste of both tradition and innovation.</p>
+    <p>We specialize in both local and continental dishes, carefully prepared with fresh ingredients and a deep love for food. Whether you're craving the rich taste of Ghanaian classics or the delicious aroma of international cuisine, we've got you covered.</p>
+    <p>Our dining space offers a warm and relaxing atmosphere, perfect for casual meals, business lunches, and celebrations. With exceptional service and a cozy environment, we ensure every guest feels right at home.</p>
+    <p>Join us today and enjoy an unforgettable food journey.</p>
+</div>
+    
+    <p style="color: #1e96e0;">Taste the world — right here in Kumasi.</p>
+  </section>
+
+  <section id="services">
+    <h2 style="color: #1e96e0;">OUR SERVICES</h2>
+    <div class="services">
+      <div class="service-box" onclick="toggleService(this)">
+        <h3 style="color: whitesmoke;">Continental Foods</h3>
+        <p class="service-detail">Jollof, Fried Rice, Noodles, Grilled Tilapia and more.</p>
+      </div>
+      <div class="service-box" onclick="toggleService(this)">
+        <h3 style="color: whitesmoke;">Local Foods</h3>
+        <p class="service-detail">Fufu, Motuo, Banku, Plain Rice and more.</p>
+      </div>
+      <div class="service-box" onclick="toggleService(this)">
+        <h3 style="color: whitesmoke;">Pub Drinks</h3>
+        <p class="service-detail">Don simon, ceres, malt, coke, fanta, sprite, and more.</p>
+      </div>
+      <div class="service-box" onclick="toggleService(this)">
+        <h3 style="color: whitesmoke;">Alcoholic Drinks</h3>
+        <p class="service-detail">Guiness, club, gulder, Sminoff,vody,bullet, Heineken, hunters, Panache, etc - responsibly served.</p>
+      </div>
+    </div>
+  </section>
+
   <section id="contact">
-    <h2 style="color: #1e96e0;;">CONTACT US</h2>
+    <h2 style="color: #1e96e0;">CONTACT US</h2>
     <form>
       <input type="text" placeholder="Your Name" required>
       <input type="email" placeholder="Your Email" required>
@@ -250,30 +267,129 @@
     </form>
   </section>
 
+  <section id="order">
+    <h2 style="color: #1e96e0;">PLACE YOUR ORDER</h2>
+    <form id="orderForm">
+      <select id="category" onchange="updateMenuOptions()" required>
+        <option value="">Select Category</option>
+        <option value="continental">Continental</option>
+        <option value="local">Local</option>
+        <option value="pub drinks">Pub Drinks</option>
+        <option value="Alcoholic drinks">Alcoholic Drinks</option>
+      </select>
+
+      <select id="menu" required>
+        <option value=""> Choose Item </option>
+      </select>
+
+      <input type="text" id="location" placeholder="Enter your delivery location and your phone number" required/>
+      <button type="submit">Place Order</button>
+    </form>
+  </section>
+
   <footer>
     <p>&copy; 2025 World of Morrison. All rights reserved.</p>
   </footer>
 
   <script>
-    // Show one section at a time
-    function showSection(sectionId) {
-      const sections = document.querySelectorAll('section');
-      sections.forEach(sec => {
+  // Show the correct section and hide others
+  function showSection(sectionId) {
+    const sections = document.querySelectorAll('section');
+    sections.forEach(sec => {
+      if (sec.id === sectionId) {
+        sec.style.display = 'block';
+      } else {
         sec.style.display = 'none';
-      });
-      document.getElementById(sectionId).style.display = 'block';
+      }
+    });
+  }
+
+  // Form logic for menu selection
+  function updateMenuOptions() {
+    const category = document.getElementById('category').value;
+    const menu = document.getElementById('menu');
+    menu.innerHTML = '<option value="">-- Choose Item --</option>';
+
+    let items = [];
+    if (category === 'continental') {
+      items = ['Jollof Rice', 'Fried Rice', 'Noodles', 'Grilled Tilapia'];
+    } else if (category === 'local') {
+      items = ['Fufu', 'Banku', 'Motuo', 'Plain Rice'];
+    } else if (category === 'pub drinks') {
+      items = [`Don Simon`, `Ceres`, `Malt`, `Coke`, `Fanta`, `Sprite`];
+    }else if (category=== `Alcoholic drinks`){
+      items=[ `Guiness`, `club`, `gulder`, `Sminoff`, `vody`, `bullet`, `Heineken`, `hunters`, `Panache`]
     }
 
-    // Remove loader and allow scroll
-    setTimeout(() => {
-      document.body.style.overflow = 'auto';
-    }, 3000);
+    items.forEach(item => {
+      const option = document.createElement('option');
+      option.value = item;
+      option.textContent = item;
+      menu.appendChild(option);
+    });
+  }
 
-    //services
+  // Handle order form submit
+  document.addEventListener('DOMContentLoaded', () => {
+    const orderForm = document.getElementById('orderForm');
+    if (orderForm) {
+      orderForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const category = document.getElementById('category').value;
+        const menu = document.getElementById('menu').value;
+        const location = document.getElementById('location').value;
+
+        if (!category || !menu || !location) {
+          alert("Please complete all fields.");
+          return;
+        }
+
+        alert(`Your order for "${menu}" under ${category.toUpperCase()} has been placed successfully to Ellen's restaurant. We will deliver to ${location} soon. Thank you!`);
+        window.open(`https://wa.me/233599395908?text=New Order: ${menu} (${category}) to be delivered at ${location}`);
+
+        orderForm.reset();
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+  // ⬅ Your existing order form code
+
+  // ⬇ Paste it right here
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById('contactName').value.trim();
+    const phone = document.getElementById('contactPhone').value.trim();
+    const message = document.getElementById('contactMessage').value.trim();
+
+    if (!name || !phone || !message) {
+      alert("Please complete all contact fields.");
+      return;
+    }
+
+    alert(`Thank you ${name}, your message has been sent! We will reach out soon.`);
+
+    window.open(`https://wa.me/233599395908?text=📩 Contact Message from ${name} (${phone}): ${message}`);
+
+    document.getElementById('contactForm').reset();
+  });
+});
+
+    // Show home on first load
+    showSection('home');
+  });
+
+  // Toggle service descriptions
   function toggleService(box) {
     const detail = box.querySelector('.service-detail');
     detail.style.display = detail.style.display === 'block' ? 'none' : 'block';
   }
-  </script>
+
+  // Allow scrolling after loading
+  setTimeout(() => {
+    document.body.style.overflow = 'auto';
+  }, 3000);
+</script>
 </body>
 </html>
